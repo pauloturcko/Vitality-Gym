@@ -5,23 +5,20 @@ import theme from "./styles/Theme";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Plans from "./components/Plans";
+import Login from "./components/Login/Login";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles /> {/* 1. Adicione o GlobalStyles aqui */}
+      <GlobalStyles />
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <main style={{ minHeight: "100vh" }}>
-                {" "}
-                <p>Testando</p>
-              </main>
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
